@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css"
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/Logo.png' %}" alt="Лого">
+        <span class="logo">Information Security</span>
+        <h3>Навигация</h3>
+        <ul>
+        <li ><a href="{% url 'home' %}"  aria-current="page"><i class="fa-solid fa-house"></i>Главная страница</a></li>
+        <li><a href="{% url 'act' %}" class="nav-link"><i class="fa-solid fa-hand-holding-dollar fa-flip"></i>Востребованность</a></li>
+        <li><a href="{% url 'geo' %}" class="nav-link"><i class="fa-solid fa-map-location-dot fa-bounce"></i>География</a></li>
+        <li><a href="{% url 'skills' %}" class="nav-link"><i class="fa-solid fa-brain fa-spin"></i>Навыки</a></li>
+        <li><a href="{% url 'last' %}" class="nav-link"><i class="fa-solid fa-list-check fa-shake"></i>Последние вакансии</a></li>
+      </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <header >
+    </header>
+  </div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="text-muted">Баянкин Даниил Антонович, РИ-220911</span>
+    </div>
+  </footer>
+</body>
+</html>
